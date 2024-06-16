@@ -1,0 +1,19 @@
+.focus{
+    position: absolute;
+    bottom: 40%;
+    width: max-content;
+    margin-left: 50px;
+}
+.slider{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.player{
+    margin: 20px;
+    margin-bottom: 5px;
+
+}
+.video-box{
+    margin-left: 2px;
+    margin-right: 2px;
+}

@@ -1,0 +1,61 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap'); */
+
+.info-container{
+    display: flex;
+    padding: 20px;
+    background-color: rgb(26, 26, 75);
+}
+
+.info-img-container{
+    flex:0.5;
+    >img{
+        border-radius: 10px;
+    } 
+}
+
+.info-detail-container{
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    >h1{
+        align-self: center;
+        font-family: "Bitter", serif;
+        font-optical-sizing: auto;
+        font-weight: 900;
+        font-style: normal;
+        color: rgb(224, 224, 224);
+    }
+}
+.info-rating{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+}
+
+.date{
+    font-family: "Bitter", serif;
+    font-weight: 400;
+}
+.previews{
+    color:wheat;
+    font-size: 25px;
+    font-family: "Bitter", serif;
+    margin: 10px;
+}
+.min{
+    max-height: 400px;
+}
+
+.minimum-req{
+   >strong{
+    font-size: 25px;
+    font-family: "Bitter";
+    color: rgb(6, 65, 168);
+    margin-top: 5px;
+   }
+   >ul{
+    font-family: "Bitter";
+   }
+}

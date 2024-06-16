@@ -1,0 +1,33 @@
+.search-container{
+    min-height: 90vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(23, 23, 53);
+}
+
+.search-bar{
+    margin-top: 40px;
+}
+
+.search-result{
+    width: 30%;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: rgb(245, 242, 239);
+}
+
+.search-items{
+    margin: 5px;
+    padding: 2px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+}
+
+.search-items:hover {
+    color: white;
+    background-color: rgb(31, 36, 73);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

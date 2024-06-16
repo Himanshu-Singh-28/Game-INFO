@@ -1,0 +1,55 @@
+.multiplayer-container{
+    position: relative;
+    /* top: 100vh; */
+    width: 100%;
+    margin-top: 0px;
+    background-color: rgba(0,0,0,0.3);
+    padding: 10px;
+}
+.silde-container{
+    width: 100%;
+}
+
+.slider-contents{
+    max-width: 90%;
+    margin: auto;
+}
+
+.card-content{
+    color: rgb(65, 135, 197);
+    font-size: small;
+    text-align: center;
+}
+
+.card-content div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card:hover{
+    transform: scale(1.02);
+}
+
+.view-all{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+
+}
+
+.view{
+    textDecoration: none;
+    color: red;
+    cursor: pointer;
+}
+
+.view:hover{
+    color: rgb(9, 124, 9);
+}
+
+.heading{
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-color: rgb(29, 29, 57);
+    padding-left: 10px;
+    padding-right: 10px;
+}

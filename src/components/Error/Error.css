@@ -1,0 +1,23 @@
+.error-container{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(24, 24, 83);
+}
+.error-heading{
+    color: white;
+    font-size: 60px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+.error-description{
+    color: white;
+    font-size: small;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.error-link{
+    color: green;
+}
