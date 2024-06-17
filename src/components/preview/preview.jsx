@@ -1,14 +1,10 @@
-import {
-  Dialog,
-  DialogContent,
-  DialogTitle
-} from "@mui/material";
+import { Dialog, DialogContent, DialogTitle } from "@mui/material";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
+import { FadeLoader } from "react-spinners";
 
 const Preview = ({ preview, setPreview, name }) => {
-  //get all the tralilers of a particular game by id using url;
   const [vedio, setVedio] = useState();
   const [isvedio, setIsVedio] = useState(false);
   const [found, setFound] = useState(true);
@@ -70,7 +66,18 @@ const Preview = ({ preview, setPreview, name }) => {
         {isvedio ? (
           <ReactPlayer url={vedio[0].mp4} playing controls width={"540px"} />
         ) : found ? (
-          <h1 style={{ textAlign: "center" }}>Loading....</h1>
+          <div
+            style={{
+              backgroundColor: "black",
+              width: "540px",
+              height: "250px",
+              display:"flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <FadeLoader color="white" />
+          </div>
         ) : (
           <h1 style={{ textAlign: "center" }}>Vedio Not Found</h1>
         )}

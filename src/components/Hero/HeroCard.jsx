@@ -6,7 +6,7 @@ import PlayButton from "@mui/icons-material/PlayCircleOutline";
 import Preview from "../preview/preview";
 
 const HeroCard = ({ item }) => {
-  const [prevew, setPrevew] = useState(false);
+  const [preview, setPreview] = useState(false);
   const data = {
     name: item.name,
     rating: item.rating,
@@ -58,15 +58,15 @@ const HeroCard = ({ item }) => {
           <div className="palyButton" style={{ flex: "1", zIndex: "100" }}>
             <IconButton
               sx={{ color: "white", textDecoration: "none" }}
-              onClick={() => setPrevew(true)}
+              onClick={() => setPreview(true)}
             >
               <PlayButton sx={{ color: "white", fontSize: "5rem" }} />
               WATCH TRAILER
             </IconButton>
           </div>
         </div>
-        {prevew && (
-          <Preview prevew={prevew} setPrevew={setPrevew} name={item.name} />
+        {preview && (
+          <Preview preview={preview} setPreview={setPreview} name={item.name} />
         )}
       </div>
     </>

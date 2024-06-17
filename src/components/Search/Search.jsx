@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import { RapidHeaders, UserContext } from "../../main";
 import "./Search.css";
 import SearchInformation from "./SearchInformation";
+import {BeatLoader} from 'react-spinners'
 
 const Search = () => {
   const [Value, setValue] = useState("Search Games...");
@@ -14,6 +15,7 @@ const Search = () => {
   const [found,setFound]=useState(true);
   const { isAuth } = useContext(UserContext);
   const [show, setShow] = useState(false);
+  const [loading,setLoading]=useState();
   const ref = useRef(null);
 
   useEffect(()=>{
@@ -33,9 +35,11 @@ const Search = () => {
       headers: RapidHeaders[1],
     }).then(({data})=>{
       setSearchVal(data.results);
+      setLoading(false);
     }).catch(err=>{
       console.log(err);
       setFound(false);
+      setLoading(false);
     });
   };
 
@@ -43,6 +47,7 @@ const Search = () => {
     setSearchVal([]);
     setValue("Search Games..");
     setShow(false);
+    setLoading(true);
   }
   const HandleClick = (id) => {
     if (!isAuth) {
@@ -61,7 +66,7 @@ const Search = () => {
   return (
     <>
       <div className="search-container">
-        <div className="search-bar">
+        <div className="search-bar" onFocus={()=>setLoading(true)} onBlur={()=>{setLoading(false);setFound(true)}}>
           <SearchBar
             placeholder={Value}
             onChange={(newval) => setValue(newval)}
@@ -69,16 +74,29 @@ const Search = () => {
             onCancelResearch={HandleCancleSearch}
           />
         </div>
-        <div className="search-result">
-          {searchVal.map((item, idx) => {
-            return (
-              <div onClick={()=>HandleClick(item.appid)} key={idx}>
-                <Card className="search-items">{item.name}</Card>
-              </div>
-            );
-          })}
-          {!found && <Card className="search-items" style={{color:"red"}}>No Game Found Enter Valid Name</Card>}
-        </div>
+        {!loading && (
+          <div className="search-result">
+            {searchVal.map((item, idx) => {
+              return (
+                <div onClick={() => HandleClick(item.appid)} key={idx}>
+                  <Card className="search-items">{item.name}</Card>
+                </div>
+              );
+            })}
+            {!found && (
+              <Card className="search-items" style={{ color: "red" }}>
+                No Game Found Enter Valid Name
+              </Card>
+            )}
+          </div>
+        )}
+        {loading && (
+          <div className="search-result">
+            <Card className="search-items" style={{height:"80px",alignContent:"center"}}>
+              <BeatLoader color="green" size={"20px"}/>
+            </Card>
+          </div>
+        )}
       </div>
       {show && (
         <div ref={ref}>

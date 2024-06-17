@@ -43,7 +43,8 @@ const Header = () => {
         <nav className="flexSB">
           <div
             className="logo"
-            style={{ display: "flex", alignItems: "center", gap: "10px" }}
+            style={{ display: "flex", alignItems: "center", gap: "10px",cursor:"pointer"}}
+            onClick={()=>navigate("/")}
           >
             <img
               src="/Logo.jpg"

@@ -18,7 +18,6 @@ const App = () => {
       setIsAuth(true);
       const d=JSON.parse(data);
       setUser(d);
-      console.log(user);
     }
   },[]);
   
