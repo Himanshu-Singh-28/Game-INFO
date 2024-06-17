@@ -3,6 +3,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { FadeLoader } from "react-spinners";
+import {cilXCircle} from '@coreui/icons'
+import CIcon from "@coreui/icons-react";
 
 const Preview = ({ preview, setPreview, name }) => {
   const [vedio, setVedio] = useState();
@@ -71,7 +73,7 @@ const Preview = ({ preview, setPreview, name }) => {
               backgroundColor: "black",
               width: "540px",
               height: "250px",
-              display:"flex",
+              display: "flex",
               alignItems: "center",
               justifyContent: "center",
             }}
@@ -79,7 +81,33 @@ const Preview = ({ preview, setPreview, name }) => {
             <FadeLoader color="white" />
           </div>
         ) : (
-          <h1 style={{ textAlign: "center" }}>Vedio Not Found</h1>
+          <div
+            style={{
+              backgroundColor: "black",
+              width: "540px",
+              height: "250px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              gap:"5px",
+            }}
+          >
+            <CIcon
+              icon={cilXCircle}
+              size="sm"
+              style={{ "--ci-primary-color": "red",height:"30px",width:"30px"}}
+            />
+            <span
+              style={{
+                color: "white",
+                fontFamily:
+                  "Cambria, Cochin, Georgia, Times, 'Times New Roman', serif",
+                fontSize: "30px",
+              }}
+            >
+              Video Not Found
+            </span>
+          </div>
         )}
       </DialogContent>
     </Dialog>
